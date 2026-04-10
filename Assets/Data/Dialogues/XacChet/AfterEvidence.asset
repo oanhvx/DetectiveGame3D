@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633288d47873bb347a16c1335a50923f, type: 3}
+  m_Name: AfterEvidence
+  m_EditorClassIdentifier: 
+  characterName: player
+  portrait: {fileID: 0}
+  isMonologue: 1
+  sentences:
+  - "Khoan \u0111\xE3... nh\u1EEFng v\u1EBFt c\u1EAFt \u1EDF c\u1ED5 n\xE0y kh\xF4ng
+    c\xF3 m\xE1u. \u0110\xE2y l\xE0 d\xE2y \u0111\u1ED3ng v\xE0 vi m\u1EA1ch! C\xE1i
+    x\xE1c n\xE0y l\xE0 m\u1ED9t robot sinh h\u1ECDc (Android)? V\u1EADy Aris th\u1EADt
+    \u0111ang \u1EDF \u0111\xE2u?"
+  nextDialogue: {fileID: 0}

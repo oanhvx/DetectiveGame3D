@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633288d47873bb347a16c1335a50923f, type: 3}
+  m_Name: AfterEvidence
+  m_EditorClassIdentifier: 
+  characterName: player
+  portrait: {fileID: 0}
+  isMonologue: 1
+  sentences:
+  - "D\u1EF1 \xE1n 'M\u1EA1ng s\u1ED1ng th\u1EE9 hai'. Aris \u0111\xE3 t\u1EA1o ra
+    3 robot gi\u1ED1ng h\u1EC7t m\xECnh \u0111\u1EC3 thay th\u1EBF \xF4ng ta l\xE0m
+    vi\u1EC7c. Nh\u01B0ng trang cu\u1ED1i vi\u1EBFt: 'K\u1EBB ph\u1EA3n b\u1ED9i
+    \u0111ang \u1EDF r\u1EA5t g\u1EA7n'. \xD4ng ta \u0111\xE3 bi\u1EBFt tr\u01B0\u1EDBc
+    chuy\u1EC7n n\xE0y!"
+  nextDialogue: {fileID: 0}

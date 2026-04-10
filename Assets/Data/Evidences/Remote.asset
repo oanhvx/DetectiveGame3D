@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Remote
+  m_EditorClassIdentifier: Assembly-CSharp::EvidenceData
+  evidenceID: EVIDENCE_REMOTE
+  nameEvidence: remote
+  title: " B\u1ED9 \u0110i\u1EC1u Khi\u1EC3n T\u1EA7n S\u1ED1 Th\u1EA5p"
+  description: "M\u1ED9t thi\u1EBFt b\u1ECB c\u1EA7m tay tinh vi v\u1EDBi v\u1ECF
+    ngo\xE0i b\u1EB1ng kim lo\u1EA1i m\u1EDD. Tr\xEAn m\u1EB7t thi\u1EBFt b\u1ECB
+    c\xF3 4 n\xFAt b\u1EA5m t\u01B0\u01A1ng \u1EE9ng v\u1EDBi 4 d\xE3y s\u1ED1 s\xEA-ri.
+    N\xFAt s\u1ED1 4 c\xF3 d\u1EA5u hi\u1EC7u b\u1ECB tr\u1EA7y x\u01B0\u1EDBc m\u1EA1nh
+    v\xE0 kh\xF4ng c\xF2n ph\u1EA3n h\u1ED3i khi nh\u1EA5n v\xE0o. C\xF3 v\u1EBB
+    nh\u01B0 n\xF3 \u0111\u01B0\u1EE3c d\xF9ng \u0111\u1EC3 k\xEDch ho\u1EA1t ho\u1EB7c
+    t\u1EAFt kh\u1EA9n c\u1EA5p c\xE1c th\u1EF1c th\u1EC3 nh\xE2n t\u1EA1o trong
+    bi\u1EC7t th\u1EF1 n\xE0y."
+  icon: {fileID: 0}

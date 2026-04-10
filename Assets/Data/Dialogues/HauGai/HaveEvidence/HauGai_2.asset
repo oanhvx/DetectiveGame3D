@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633288d47873bb347a16c1335a50923f, type: 3}
+  m_Name: HauGai_2
+  m_EditorClassIdentifier: 
+  characterName: "h\u1EA7u g\xE1i"
+  portrait: {fileID: 0}
+  isMonologue: 0
+  sentences:
+  - "\xD4ng ta... \xF4ng ta \u0111\u1ECBnh thay th\u1EBF t\xF4i b\u1EB1ng m\u1ED9t
+    con robot v\xF4 h\u1ED3n \u0111\xF3 sao? T\xF4i gh\xE9t \xF4ng ta, nh\u01B0ng
+    t\xF4i kh\xF4ng \u0111\u1EE7 can \u0111\u1EA3m \u0111\u1EC3 gi\u1EBFt ng\u01B0\u1EDDi,
+    th\xE1m t\u1EED tin t\xF4i \u0111i!"
+  nextDialogue: {fileID: 0}

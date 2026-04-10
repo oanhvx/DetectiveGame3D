@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633288d47873bb347a16c1335a50923f, type: 3}
+  m_Name: CanhSat_5
+  m_EditorClassIdentifier: 
+  characterName: "C\u1EA3nh S\xE1t"
+  portrait: {fileID: 0}
+  isMonologue: 0
+  sentences:
+  - "\u0110\xFAng v\u1EADy. Nhi\u1EC7m v\u1EE5 c\u1EE7a anh l\xE0 th\u1EA9m v\u1EA5n
+    h\u1ECD v\xE0 t\xECm ra b\u1EB1ng ch\u1EE9ng x\xE1c \u0111\xE1ng nh\u1EA5t. \u0110\u1EEBng
+    \u0111\u1EC3 k\u1EBB gi\u1EBFt ng\u01B0\u1EDDi tr\u1ED1n tho\xE1t."
+  nextDialogue: {fileID: 0}

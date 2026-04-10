@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633288d47873bb347a16c1335a50923f, type: 3}
+  m_Name: QuanGia
+  m_EditorClassIdentifier: 
+  characterName: QuanGia
+  portrait: {fileID: 0}
+  isMonologue: 0
+  sentences:
+  - "Anh t\xECm th\u1EA5y n\xF3 \u1EDF \u0111\xE2u?! \u0110\u01B0a n\xF3 \u0111\xE2y!
+    C\xE1i \u0111\xF3 \u0111\xE1ng gi\xE1 c\u1EA3 m\u1ED9t gia t\xE0i tr\xEAn th\u1ECB
+    tr\u01B0\u1EDDng \u0111en. Aris ch\u1EC9 l\xE0 m\u1ED9t l\xE3o gi\xE0 \u0111i\xEAn
+    r\u1ED3 v\u1EDBi \u0111\u1ED1ng \u0111\u1ED3 ch\u01A1i n\xE0y th\xF4i!"
+  nextDialogue: {fileID: 0}

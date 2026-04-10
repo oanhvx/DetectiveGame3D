@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633288d47873bb347a16c1335a50923f, type: 3}
+  m_Name: AfterRemote
+  m_EditorClassIdentifier: 
+  characterName: remote
+  portrait: {fileID: 0}
+  isMonologue: 1
+  sentences:
+  - "M\u1ED9t thi\u1EBFt b\u1ECB \u0111i\u1EC1u khi\u1EC3n t\u1EEB xa c\xF4ng ngh\u1EC7
+    cao v\u1EDBi 4 n\xFAt b\u1EA5m. N\xFAt th\u1EE9 4 \u0111\xE3 b\u1ECB h\u1ECFng.
+    C\xF3 l\u1EBD n\xF3 d\xF9ng \u0111\u1EC3 \u0111i\u1EC1u khi\u1EC3n c\xE1c b\u1EA3n
+    sao Android?"
+  nextDialogue: {fileID: 0}

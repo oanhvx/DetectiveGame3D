@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633288d47873bb347a16c1335a50923f, type: 3}
+  m_Name: VeSi_2
+  m_EditorClassIdentifier: 
+  characterName: "V\u1EC7 s\u0129"
+  portrait: {fileID: 0}
+  isMonologue: 0
+  sentences:
+  - "Nhi\u1EC7m v\u1EE5 c\u1EE7a t\xF4i l\xE0 b\u1EA3o v\u1EC7 v\xF2ng ngo\xE0i.
+    Nh\u1EEFng g\xEC x\u1EA3y ra trong ph\xF2ng k\xEDn n\u1EB1m ngo\xE0i t\u1EA7m
+    ki\u1EC3m so\xE1t c\u1EE7a t\xF4i."
+  nextDialogue: {fileID: 0}

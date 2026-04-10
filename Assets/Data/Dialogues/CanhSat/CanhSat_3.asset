@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633288d47873bb347a16c1335a50923f, type: 3}
+  m_Name: CanhSat_3
+  m_EditorClassIdentifier: 
+  characterName: "C\u1EA3nh s\xE1t"
+  portrait: {fileID: 0}
+  isMonologue: 0
+  sentences:
+  - "Ti\u1EBFn s\u0129 Aris ch\u1EBFt trong ph\xF2ng l\xE0m vi\u1EC7c kh\xF3a k\xEDn.
+    Kh\xF4ng c\xF3 d\u1EA5u hi\u1EC7u \u0111\u1ED9t nh\u1EADp. Ch\u1EC9 c\xF3 3 ng\u01B0\u1EDDi
+    gi\xFAp vi\u1EC7c \u1EDF trong nh\xE0 l\xFAc \u0111\xF3: H\u1EA7u g\xE1i Maya,
+    Qu\u1EA3n gia Leo v\xE0 V\u1EC7 s\u0129 Kael."
+  nextDialogue: {fileID: 11400000, guid: 000c592762c32e343a79d3dc2a6d2e0c, type: 2}
