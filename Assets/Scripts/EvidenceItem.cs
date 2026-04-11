@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 [CreateAssetMenu(fileName = "New Evidence", menuName = "Evidence/EvidenceData")]
 public class EvidenceData:ScriptableObject
@@ -20,16 +21,19 @@ public class EvidenceItem : MonoBehaviour
     public Dialogue MonologueBeforeGetEvidence;
     public Dialogue MonologueAfterGetEvidence;
     
-    private bool isProcessing = false;
-    private bool firtLook = false;
+    private bool isprocessing = false;
+    private bool isfirtLook = false;
     
-    public bool FIRTLOOK()
+    public bool IsFirtLook
     {
-        return firtLook;
+        set { isfirtLook = value; }
+        get { return isfirtLook; }
     }
-    public bool ISPROCESSING()
+    
+    public bool IsProcessing 
     {
-        return isProcessing;
+        set { isprocessing = value; }
+        get { return isprocessing; }
     }
     public void OnInteraction()
     {
@@ -41,27 +45,27 @@ public class EvidenceItem : MonoBehaviour
     }
     IEnumerator BeforeGetEvidence()
     {
-        firtLook = true;
-        isProcessing = true;
-        Debug.Log("isProcessing : " + isProcessing);
+        IsFirtLook = true;
+        IsProcessing = true;
+        Debug.Log("isProcessing : " + IsProcessing);
         DialogueManager.instance.StartDialogue(MonologueBeforeGetEvidence);
         DialogueManager.instance.pressKey.text = "press Space to continuous";
         GameManager.instance.UI.Show();
         while (DialogueManager.instance.isDialogueActive) yield return null;
         GameManager.instance.UI.Hide();
-        isProcessing = false;
+        IsProcessing = false;
     }
     IEnumerator MonologueAndPick()
     {
-        isProcessing = true;
+        IsProcessing = true;
         DialogueManager.instance.pressKey.text = "press Space to continuous";
         DialogueManager.instance.StartDialogue(MonologueAfterGetEvidence);
         while (DialogueManager.instance.isDialogueActive)
         {
             yield return null;
         }
-        GameManager.instance.UI.Hide();
-        isProcessing = false;
-        Debug.Log("isProcessing : " + isProcessing);
+        IsProcessing = false;
+        GetComponent<Collider>().enabled = false;
+        Debug.Log("isProcessing : " + IsProcessing);
     }
 }

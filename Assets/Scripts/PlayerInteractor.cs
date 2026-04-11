@@ -53,11 +53,11 @@ public class PlayerInteractor : MonoBehaviour
             }
             if (evidence != null)
             {
-                if (!evidence.FIRTLOOK())
+                if (!evidence.IsFirtLook)
                 {
                     evidence.BeforeGet();
                 }
-                if (evidence.ISPROCESSING()) return;
+                if (evidence.IsProcessing) return;
                 DialogueManager.instance.pressKey.text = "press E to pick";
                 GameManager.instance.UI.Show();
                 if (Input.GetKeyDown(KeyCode.E))
@@ -76,6 +76,6 @@ public class PlayerInteractor : MonoBehaviour
         //Debug.Log("collected " + evidence.data.title);
         //Destroy(evidence.gameObject);
         evidence.GetComponent<MeshRenderer>().enabled = false;
-        evidence.GetComponent<Collider>().enabled = false;
+        //evidence.GetComponent<Collider>().enabled = false;
     }
 }
