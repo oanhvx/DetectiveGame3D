@@ -53,17 +53,29 @@ public class PlayerInteractor : MonoBehaviour
             }
             if (evidence != null)
             {
+                if (!evidence.FIRTLOOK())
+                {
+                    evidence.BeforeGet();
+                }
                 if (evidence.ISPROCESSING()) return;
-                evidence.OnInteraction(evidence);
+                DialogueManager.instance.pressKey.text = "press E to pick";
+                GameManager.instance.UI.Show();
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    CollectEvidence(evidence);
+                    evidence.OnInteraction();
+                }
                 return;
             }
         }
         GameManager.instance.UI.Hide();
     }
-    //void CollectEvidence(EvidenceItem evidence)
-    //{
-    //    EvidenceManager.Instance.AddEvidence(evidence.data);
-    //    Debug.Log("collected " + evidence.data.title);
-    //    Destroy(evidence.gameObject);
-    //}
+    void CollectEvidence(EvidenceItem evidence)
+    {
+        EvidenceManager.Instance.AddEvidence(evidence.data);
+        //Debug.Log("collected " + evidence.data.title);
+        //Destroy(evidence.gameObject);
+        evidence.GetComponent<MeshRenderer>().enabled = false;
+        evidence.GetComponent<Collider>().enabled = false;
+    }
 }

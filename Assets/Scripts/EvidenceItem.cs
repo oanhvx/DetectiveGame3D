@@ -21,44 +21,41 @@ public class EvidenceItem : MonoBehaviour
     public Dialogue MonologueAfterGetEvidence;
     
     private bool isProcessing = false;
+    private bool firtLook = false;
     
+    public bool FIRTLOOK()
+    {
+        return firtLook;
+    }
     public bool ISPROCESSING()
     {
         return isProcessing;
     }
-    public void OnInteraction(EvidenceItem Item)
+    public void OnInteraction()
     {
-        StartCoroutine(MonologueAndPick(Item));
+        StartCoroutine(MonologueAndPick());
     }
-
-    IEnumerator MonologueAndPick(EvidenceItem item)
+    public void BeforeGet()
     {
+        StartCoroutine(BeforeGetEvidence());
+    }
+    IEnumerator BeforeGetEvidence()
+    {
+        firtLook = true;
         isProcessing = true;
-        Debug.Log("isProcessing : "+ isProcessing);
+        Debug.Log("isProcessing : " + isProcessing);
         DialogueManager.instance.StartDialogue(MonologueBeforeGetEvidence);
         DialogueManager.instance.pressKey.text = "press Space to continuous";
         GameManager.instance.UI.Show();
-        while (DialogueManager.instance.isDialogueActive)
-        {
-            yield return null;
-        }
-        DialogueManager.instance.pressKey.text = "press E to pick";
-        bool isPressedE = false;
-        while(!isPressedE)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                isPressedE = true;
-            }
-            yield return null;
-        }
-
-        EvidenceManager.Instance.AddEvidence(item.data);
-        GetComponent<MeshRenderer>().enabled = false;
-        GetComponent<Collider>().enabled = false;
-
-        DialogueManager.instance.StartDialogue(MonologueAfterGetEvidence);
+        while (DialogueManager.instance.isDialogueActive) yield return null;
+        GameManager.instance.UI.Hide();
+        isProcessing = false;
+    }
+    IEnumerator MonologueAndPick()
+    {
+        isProcessing = true;
         DialogueManager.instance.pressKey.text = "press Space to continuous";
+        DialogueManager.instance.StartDialogue(MonologueAfterGetEvidence);
         while (DialogueManager.instance.isDialogueActive)
         {
             yield return null;
