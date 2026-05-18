@@ -60,12 +60,14 @@ public class GameManager : MonoBehaviour
 
     public void ShowWin()
     {
+        isGameOver = true;
         resultPanel.SetActive(true);
         resultMessage.text = "CHÍNH XÁC! Kael mỉm cười tháo lớp mặt nạ vệ sĩ: 'Ngươi rất khá, thám tử. Ta chính là Aris thật.'";
     }
 
     public void ShowLoss(string nameSuspect)
     {
+        isGameOver = true;
         resultPanel.SetActive(true);
         if (nameSuspect == "Maya")
         {

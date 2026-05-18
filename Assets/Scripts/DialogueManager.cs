@@ -14,9 +14,11 @@ public class DialogueManager : MonoBehaviour
     public Image portraitImage;
     public GameObject dialoguePanel;
     public TextMeshProUGUI showSuggest;
-
+    public AudioSource typingAudioSource;
+    public AudioClip typingClip;
     private Dialogue activateDialogue;
     private Queue<string> sentences;
+    private Animator animator;
 
     private void Awake()
     {
@@ -24,8 +26,9 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(Dialogue dialogue, Animator ani)
     {
+        this.animator = ani; // Bắt buộc phải gán biến animator để sử dụng ở các hàm khác
         //Cursor.lockState = CursorLockMode.None;
         //Cursor.visible = true;
         //pressKey.text = "press Space to continuous";
@@ -40,7 +43,7 @@ public class DialogueManager : MonoBehaviour
         {
             nameText.text = dialogue.characterName;
             portraitImage.sprite = dialogue.portrait;
-            dialogueText.color = Color.black;
+            dialogueText.color = Color.white;
             //dialogueText.fontStyle = FontStyles.Italic;
         }
         activateDialogue = dialogue;
@@ -69,12 +72,27 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentence(string sentence)
     {
+        // 1. Bật âm thanh và animation hội thoại khi bắt đầu chạy chữ
+        if (typingAudioSource != null && typingClip != null)
+        {
+            typingAudioSource.clip = typingClip;
+            typingAudioSource.loop = true;
+            typingAudioSource.volume = 0.7f;
+            if (!typingAudioSource.isPlaying) typingAudioSource.Play();
+        }
+
+        if (animator != null) animator.SetBool("IsTalking", true);
+
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.05f);
         }
+
+        // 2. Tắt âm thanh và animation khi dòng chữ đã chạy xong (để NPC ngậm miệng lại khi hết câu)
+        if (typingAudioSource != null) typingAudioSource.Stop();
+        if (animator != null) animator.SetBool("IsTalking", false);
     }
 
     void EndDialogue()
@@ -82,11 +100,20 @@ public class DialogueManager : MonoBehaviour
         Dialogue cursorDialogue = activateDialogue;
         //Cursor.lockState = CursorLockMode.Locked;
         //Cursor.visible = false;
+        
+        // Đảm bảo tắt âm thanh và animation khi kết thúc hội thoại (ví dụ: người chơi bấm skip)
+        if (typingAudioSource != null) typingAudioSource.Stop();
+        if (animator != null) animator.SetBool("IsTalking", false);
+        
         isDialogueActive = false;
         dialoguePanel.SetActive(false);
         if (cursorDialogue != null && cursorDialogue.nextDialogue != null)
         {
-            StartDialogue(cursorDialogue.nextDialogue);//chay dialogue trong dialogue ban đầu đảm bảo hội thoại giữa nhân vật và npc so le
+            StartDialogue(cursorDialogue.nextDialogue, animator);//chay dialogue trong dialogue ban đầu đảm bảo hội thoại giữa nhân vật và npc so le
+        }
+        else
+        {
+            animator = null;
         }
         //pressKey.text = "press E to talk";
     }

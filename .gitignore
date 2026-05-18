@@ -73,5 +73,7 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/Models/Police/Ch15_nonPBR.fbx
+Assets/Models/Player/Ch31_nonPBR.fbx
 
 # End of https://www.toptal.com/developers/gitignore/api/unity

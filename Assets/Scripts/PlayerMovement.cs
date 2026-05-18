@@ -10,9 +10,10 @@ public class PlayerMovement : MonoBehaviour
     CharacterController controller;
     private Vector3 velocity;
     private float gravity = -9.81f;
-
+    Animator animator;
     void Start()
     {
+        animator = GetComponentInChildren<Animator>();
         controller = GetComponent<CharacterController>();
     }
 
@@ -25,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
         }
         velocity.y += gravity * Time.deltaTime;
         controller.Move(Vector3.up * velocity.y);
+
         if (DialogueManager.instance.isDialogueActive) return;
         if(Cursor.lockState != CursorLockMode.Locked) return;
         float x = Input.GetAxis("Horizontal");
@@ -36,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         forward.y = 0;
         right.y = 0;
         Vector3 movement = forward * z + right * x;
+        if (animator != null) animator.SetFloat("Speed", movement.magnitude); 
         controller.Move(movement * speed * Time.deltaTime);
     }
 }

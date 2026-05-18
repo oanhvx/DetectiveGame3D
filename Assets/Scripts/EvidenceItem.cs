@@ -35,31 +35,31 @@ public class EvidenceItem : MonoBehaviour
         set { isprocessing = value; }
         get { return isprocessing; }
     }
-    public void OnInteraction()
+    public void OnInteraction(Animator animator)
     {
-        StartCoroutine(MonologueAndPick());
+        StartCoroutine(MonologueAndPick(animator));
     }
-    public void BeforeGet()
+    public void BeforeGet(Animator animator)
     {
-        StartCoroutine(BeforeGetEvidence());
+        StartCoroutine(BeforeGetEvidence(animator));
     }
-    IEnumerator BeforeGetEvidence()
+    IEnumerator BeforeGetEvidence(Animator ani)
     {
         IsFirtLook = true;
         IsProcessing = true;
         Debug.Log("isProcessing : " + IsProcessing);
-        DialogueManager.instance.StartDialogue(MonologueBeforeGetEvidence);
+        DialogueManager.instance.StartDialogue(MonologueBeforeGetEvidence, ani);
         DialogueManager.instance.pressKey.text = "press Space to continuous";
         GameManager.instance.UI.Show();
         while (DialogueManager.instance.isDialogueActive) yield return null;
         GameManager.instance.UI.Hide();
         IsProcessing = false;
     }
-    IEnumerator MonologueAndPick()
+    IEnumerator MonologueAndPick(Animator ani)
     {
         IsProcessing = true;
         DialogueManager.instance.pressKey.text = "press Space to continuous";
-        DialogueManager.instance.StartDialogue(MonologueAfterGetEvidence);
+        DialogueManager.instance.StartDialogue(MonologueAfterGetEvidence, ani);
         while (DialogueManager.instance.isDialogueActive)
         {
             yield return null;

@@ -13,12 +13,18 @@ public class NPCInteraction : MonoBehaviour
     //public string message;
 
     private bool clusGranted;
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
     public void interact()
     {
         if (DialogueManager.instance.isDialogueActive) return;
         if (!string.IsNullOrEmpty(requiredEvidenceID) && EvidenceManager.Instance.HasEvidence(requiredEvidenceID))
         {
-            DialogueManager.instance.StartDialogue(evidenceDialogue);
+            DialogueManager.instance.StartDialogue(evidenceDialogue, animator);
             //DialogueManager.instance.ShowSuggest(message);
             if (!clusGranted)
             {
@@ -28,7 +34,7 @@ public class NPCInteraction : MonoBehaviour
         }
         else
         {
-            DialogueManager.instance.StartDialogue(defaultDialogue);
+            DialogueManager.instance.StartDialogue(defaultDialogue, animator);
         }
     }
 }

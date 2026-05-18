@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerInteractor : MonoBehaviour
 {
     public float interacDistance = 3f;
     public Transform eyeOfcamera;
-
+    
+    private Animator animator;
+    private void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
     void Update()
     {
         CheckInteractable();
@@ -55,7 +61,7 @@ public class PlayerInteractor : MonoBehaviour
             {
                 if (!evidence.IsFirtLook)
                 {
-                    evidence.BeforeGet();
+                    evidence.BeforeGet(animator);
                 }
                 if (evidence.IsProcessing) return;
                 DialogueManager.instance.pressKey.text = "press E to pick";
@@ -63,7 +69,7 @@ public class PlayerInteractor : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     CollectEvidence(evidence);
-                    evidence.OnInteraction();
+                    evidence.OnInteraction(animator);
                 }
                 return;
             }
@@ -75,7 +81,7 @@ public class PlayerInteractor : MonoBehaviour
         EvidenceManager.Instance.AddEvidence(evidence.data);
         //Debug.Log("collected " + evidence.data.title);
         //Destroy(evidence.gameObject);
-        evidence.GetComponent<MeshRenderer>().enabled = false;
+        evidence.GetComponent<Transform>().GetChild(0).gameObject.SetActive(false);
         //evidence.GetComponent<Collider>().enabled = false;
     }
 }
