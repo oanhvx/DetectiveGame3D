@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -14,10 +14,15 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI resultMessage;
     public InteractionUI UI;
 
+    [Header("Âm Thanh Kết Thúc")]
+    public AudioSource audioSource;
+    public AudioClip winSound;
+    public AudioClip loseSound;
+
     private void Awake()
     {
         instance = this;
-        //isGameOver = false;
+        if (audioSource == null) audioSource = GetComponent<AudioSource>();
     }
 
     public void MakeAccusation(string nameSuspect)
@@ -63,6 +68,12 @@ public class GameManager : MonoBehaviour
         isGameOver = true;
         resultPanel.SetActive(true);
         resultMessage.text = "CHÍNH XÁC! Kael mỉm cười tháo lớp mặt nạ vệ sĩ: 'Ngươi rất khá, thám tử. Ta chính là Aris thật.'";
+        
+        // Phát âm thanh thắng cuộc
+        if (audioSource != null && winSound != null)
+        {
+            audioSource.PlayOneShot(winSound);
+        }
     }
 
     public void ShowLoss(string nameSuspect)
@@ -76,6 +87,12 @@ public class GameManager : MonoBehaviour
         else
         {
             resultMessage.text = "SAI RỒI! Leo chỉ là kẻ trộm vặt. Hung thủ thật sự (Aris giả dạng) đã trốn thoát thành công.";
+        }
+
+        // Phát âm thanh thua cuộc
+        if (audioSource != null && loseSound != null)
+        {
+            audioSource.PlayOneShot(loseSound);
         }
     }
 }

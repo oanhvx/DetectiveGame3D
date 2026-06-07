@@ -36,7 +36,7 @@ public class PlayerInteractor : MonoBehaviour
                 //Debug.Log("find evidence : "+ evidence.data.title);
                 if (Input.GetKeyDown(KeyCode.M))
                 {
-                    //ui.Hide();
+                    GameManager.instance.UI.Hide();
                     trigger.OpenAccuseMenu();
                 }
                 return;

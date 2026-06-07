@@ -7973,6 +7973,7 @@ MonoBehaviour:
       m_FeatureLookupFlags: 0
   fallbackFontAssets: []
   m_FallbackFontAssetTable:
+  - {fileID: 11400000, guid: c86c22cc5e13bc04e92f08f4b4daff25, type: 2}
   - {fileID: 11400000, guid: a457cfe793e90c34189ae6d0c64cde91, type: 2}
   - {fileID: 11400000, guid: dba41792d7e55254eb959fa48b81a6f9, type: 2}
   - {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
