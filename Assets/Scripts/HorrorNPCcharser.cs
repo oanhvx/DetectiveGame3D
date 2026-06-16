@@ -289,7 +289,11 @@ public class HorrorNPCChaser : MonoBehaviour
             if (dist < 0.4f)
             {
                 // Đã đến — dừng NavMesh
-                if (navAgent != null) navAgent.ResetPath();
+                if (navAgent != null)
+                {
+                    navAgent.ResetPath();
+                    navAgent.updateRotation = false;
+                }
                 break;
             }
 
@@ -325,7 +329,7 @@ public class HorrorNPCChaser : MonoBehaviour
     private IEnumerator ReturnToOrigin(Vector3 TargetPosition)
     {
         if (navAgent == null) yield break;
-
+        navAgent.updateRotation = true;
         PlayFootstep();
         if (npcAnimator != null) npcAnimator.SetTrigger(runTrigger);
 
