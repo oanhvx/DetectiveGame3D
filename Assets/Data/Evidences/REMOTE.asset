@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Remote
-  m_EditorClassIdentifier: Assembly-CSharp::EvidenceData
+  m_Script: {fileID: 11500000, guid: 477e69e40a8818f148cf98ab105d47c8, type: 3}
+  m_Name: REMOTE
+  m_EditorClassIdentifier: 
   evidenceID: EVIDENCE_REMOTE
-  nameEvidence: remote
-  title: " B\u1ED9 \u0110i\u1EC1u Khi\u1EC3n T\u1EA7n S\u1ED1 Th\u1EA5p"
+  nameEvidence: "\u0110i\u1EC1u khi\u1EC3n t\u1EEB xa"
+  title: "B\u1ED9 \u0110i\u1EC1u Khi\u1EC3n T\u1EA7n S\u1ED1 Th\u1EA5p"
   description: "M\u1ED9t thi\u1EBFt b\u1ECB c\u1EA7m tay tinh vi v\u1EDBi v\u1ECF
     ngo\xE0i b\u1EB1ng kim lo\u1EA1i m\u1EDD. Tr\xEAn m\u1EB7t thi\u1EBFt b\u1ECB
     c\xF3 4 n\xFAt b\u1EA5m t\u01B0\u01A1ng \u1EE9ng v\u1EDBi 4 d\xE3y s\u1ED1 s\xEA-ri.
