@@ -24,7 +24,7 @@ public class PlayerInteractor : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, interacDistance))
         {
-            Debug.Log("looking at " + hit.collider.name);
+            // Debug.Log("looking at " + hit.collider.name);
             EvidenceItem evidence = hit.collider.GetComponent<EvidenceItem>();
             NPCInteraction npc = hit.collider.GetComponent<NPCInteraction>();
             AccuseTrigger trigger = hit.collider.GetComponent<AccuseTrigger>();

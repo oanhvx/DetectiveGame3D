@@ -2,17 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
-
-[CreateAssetMenu(fileName = "New Evidence", menuName = "Evidence/EvidenceData")]
-public class EvidenceData:ScriptableObject
-{
-    public string evidenceID;
-    public string nameEvidence;
-    public string title;
-    public string description;
-    public Sprite icon;
-}
+// using static UnityEditor.Progress;
 
 public class EvidenceItem : MonoBehaviour
 {
